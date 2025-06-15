@@ -1,0 +1,24 @@
+    name: Deploy Frontend to GitHub Pages
+
+    on:
+      push:
+        branches:
+          - main # Adjust to your main branch name (e.g., master)
+
+    jobs:
+      deploy:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Checkout repository
+            uses: actions/checkout@v4
+            with:
+              fetch-depth: 0
+
+          - name: Deploy to GitHub Pages
+            uses: peaceiris/actions-gh-pages@v4
+            with:
+              github_token: ${{ secrets.GITHUB_TOKEN }}
+              publish_dir: ./client # This tells GitHub Actions to deploy only the 'client' directory
+              # For custom domains, uncomment the line below and replace with your domain
+              # cname: garyrobinsoniii.com
+    
