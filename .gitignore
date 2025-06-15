@@ -1,0 +1,13 @@
+# Node.js
+node_modules/
+.env
+
+# MacOS
+.DS_Store
+
+# VSCode
+.vscode/
+
+# GitHub Pages build output
+_site/
+.jekyll-cache/

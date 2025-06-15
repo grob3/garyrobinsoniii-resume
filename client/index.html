@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Resume | Gary Robinson, III</title>
+    <!-- Link to external Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Link to your custom stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Chosen Palette: Warm Neutrals, accented with various shades of blues, greens, and grays for distinction. -->
+    <!-- Application Structure Plan: The SPA is designed as a top-to-bottom narrative journey through the candidate's career. It starts with a high-level summary, moves to an interactive skills dashboard, followed by a 'Recent Projects' section showcasing practical application of skills, then presents a detailed, interactive career timeline, and concludes with education/certifications and a contact form. This structure allows a recruiter to get a quick overview and then explore areas of interest, moving from abstract skills to concrete project examples, then to professional experience. -->
+    <!-- Visualization & Content Choices: 1. Skills -> Goal: Inform/Organize & Show Relationships -> Viz: Categorized Tagged Lists with Hover Popover -> Interaction: Visual grouping via tags, hover to see associated companies for each skill. Justification: Categorized lists are ATS-friendly, and the hover popover directly links skills to experience. 2. Recent Projects -> Goal: Showcase Applied Skills & Work -> Viz: Grid of interactive tiles with image placeholders, description, and skill tags -> Interaction: Clickable links to GitHub. Justification: Provides concrete examples of work and applied skills in a visually appealing and easily digestible format. 3. Experience -> Goal: Show Change & Detail -> Viz: Vertical Timeline (HTML/CSS) with company initials/color coding -> Interaction: Click to expand/collapse job details, including specific skills used. Justification: An intuitive way to show career progression with enhanced detail. 4. Education/Certs -> Goal: Inform -> Viz: Styled Cards -> Interaction: None. Justification: Straightforward data presented clearly. 5. Contact Form -> Goal: Enable communication -> Viz: Standard form fields with a submit button -> Interaction: Client-side message on submission which sends a POST request to a backend server. Justification: Provides a direct and accessible way for interested parties to reach out, with improved security and reliability via a backend. -->
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header id="header" class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <div class="text-xl font-bold">
+                    <a href="#hero" class="text-blue-600 hover:text-blue-700 transition">GR///</a>
+                </div>
+                <nav class="hidden md:flex space-x-6">
+                    <a href="#summary" class="text-gray-600 hover:text-blue-600 transition">Summary</a>
+                    <a href="#skills" class="text-gray-600 hover:text-blue-600 transition">Skills</a>
+                    <a href="#projects" class="text-gray-600 hover:text-blue-600 transition">Projects</a>
+                    <a href="#experience" class="text-gray-600 hover:text-blue-600 transition">Experience</a>
+                    <a href="#education" class="text-gray-600 hover:text-blue-600 transition">Education</a>
+                    <a href="#contact" class="text-gray-600 hover:text-blue-600 transition">Contact</a>
+                </nav>
+                <button id="mobile-menu-button" class="md:hidden p-2 rounded-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
+                </button>
+            </div>
+             <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4">
+                <a href="#summary" class="block py-2 px-4 text-sm text-gray-600 hover:bg-gray-200 rounded">Summary</a>
+                <a href="#skills" class="block py-2 px-4 text-sm text-gray-600 hover:bg-gray-200 rounded">Skills</a>
+                <a href="#projects" class="block py-2 px-4 text-sm text-gray-600 hover:bg-gray-200 rounded">Projects</a>
+                <a href="#experience" class="block py-2 px-4 text-sm text-gray-600 hover:bg-gray-200 rounded">Experience</a>
+                <a href="#education" class="block py-2 px-4 text-sm text-gray-600 hover:bg-gray-200 rounded">Education</a>
+                <a href="#contact" class="block py-2 px-4 text-sm text-gray-600 hover:bg-gray-200 rounded">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+
+        <!-- Hero Section -->
+        <section id="hero" class="text-center mb-16">
+            <h1 class="text-5xl md:text-6xl font-extrabold text-gray-800 leading-tight">GARY ROBINSON, III</h1>
+            <p class="text-xl md:text-2xl text-blue-600 font-semibold mt-4">GenAI Certified QA Engineering Leader</p>
+            <p class="text-gray-500 mt-2">Active Clearance</p>
+            <div class="mt-6 flex justify-center items-center space-x-4 text-sm text-gray-600">
+                <span>Vienna, VA</span>
+                <span>&bull;</span>
+                <a href="mailto:grobinson3@gmail.com" class="hover:text-blue-600">grobinson3@gmail.com</a>
+                <span>&bull;</span>
+                <a href="https://www.linkedin.com/in/garyrobinsoniii" target="_blank" class="hover:text-blue-600">LinkedIn Profile</a>
+            </div>
+        </section>
+
+        <!-- Summary Section -->
+        <section id="summary" class="mb-16 scroll-mt-20">
+            <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">Summary of Qualifications</h2>
+            <div class="max-w-4xl mx-auto bg-white p-8 rounded-xl shadow-md">
+                 <p class="text-lg leading-relaxed text-gray-700">
+                    Strategic and forward-thinking QA Engineering Leader with over 15 years of experience driving quality, automation, and security across web, mobile, and enterprise platforms. GenAl Certified with a growing portfolio of applied Al experience, including leveraging generative Al to streamline test design, data analysis, and defect triage. Adept at integrating Al into quality workflows and leading teams through the adoption of modern QA practices, performance testing, accessibility, and DevSecOps. Demonstrated success guiding QA strategy for mission-critical systems in federal and commercial sectors. Actively pursuing opportunities to lead Al-driven quality initiatives that accelerate innovation and improve software reliability at scale.
+                </p>
+            </div>
+        </section>
+
+        <!-- Skills Dashboard Section -->
+        <section id="skills" class="mb-16 scroll-mt-20">
+            <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">Technical Skills Overview</h2>
+            <div class="max-w-6xl mx-auto bg-white p-8 rounded-xl shadow-md">
+                 <p class="text-center text-gray-600 mb-8">This section provides a categorized overview of my technical expertise, detailing specific technologies and methodologies within each domain. Hover over any skill tag to see the companies where I've utilized that skill. This structured presentation is designed to give a clear and comprehensive understanding of my skill set, highlighting depth in each area.</p>
+                <div id="skills-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative">
+                    <!-- Skills will be dynamically populated here -->
+                    <div id="skill-tooltip" class="skill-tooltip"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recent Projects Section -->
+        <section id="projects" class="mb-16 scroll-mt-20">
+            <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">Recent Projects</h2>
+            <div class="max-w-6xl mx-auto bg-white p-8 rounded-xl shadow-md">
+                <p class="text-center text-gray-600 mb-8">This section highlights some recent projects, showcasing practical applications of my skills and problem-solving abilities. Each tile provides a brief overview, a link to the project's GitHub Pages, and lists the key technologies involved. Explore these projects to see my capabilities in action.</p>
+                <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Projects will be dynamically populated here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Timeline Section -->
+        <section id="experience" class="mb-16 scroll-mt-20">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Career Timeline</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-4xl mx-auto">My professional journey spans over 15 years in quality assurance, from foundational roles to leading complex QA initiatives for major organizations. This interactive timeline highlights key positions and accomplishments. Click on any role to expand and see the detailed contributions and achievements from that period, including the specific skills utilized.</p>
+            <div id="timeline-container" class="relative max-w-4xl mx-auto">
+                <!-- Timeline line -->
+                <div class="absolute left-1/2 -translate-x-1/2 h-full w-0.5 bg-gray-300"></div>
+            </div>
+        </section>
+
+        <!-- Education & Certifications Section -->
+        <section id="education" class="mb-16 scroll-mt-20">
+             <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">Education & Certifications</h2>
+             <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+                <!-- Education -->
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <h3 class="font-bold text-xl mb-2 text-gray-800">Education</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <p class="font-semibold text-blue-600">George Mason University</p>
+                            <p class="text-gray-600">B.S. in IT, Concentration in Information Security</p>
+                            <p class="text-sm text-gray-500">May 2012</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Certifications -->
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <h3 class="font-bold text-xl mb-2 text-gray-800">Certifications</h3>
+                    <div id="certifications-container" class="space-y-4"></div>
+                </div>
+             </div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section id="contact" class="mb-16 scroll-mt-20">
+            <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">Contact Me</h2>
+            <div class="max-w-2xl mx-auto bg-white p-8 rounded-xl shadow-md">
+                <p class="text-center text-gray-600 mb-6">Interested in consulting or employment opportunities? Feel free to reach out using the form below.</p>
+                <form id="contact-form" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                        <input type="text" id="name" name="name" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                        <input type="email" id="email" name="email" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+                        <textarea id="message" name="message" rows="5" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="inline-flex justify-center py-2 px-6 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition">
+                            Send Message
+                        </button>
+                    </div>
+                    <div id="form-message" class="mt-4 text-center text-sm font-medium hidden"></div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="text-center py-8 mt-12 text-gray-500 text-sm">
+        <p>Interactive resume created for Gary Robinson, III.</p>
+        <p>&copy; 2025</p>
+    </footer>
+
+    <!-- Link to your JavaScript file -->
+    <script src="js/script.js"></script>
+</body>
+</html>

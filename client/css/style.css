@@ -1,0 +1,46 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #F8F7F4;
+    color: #4A4A4A;
+}
+.timeline-item-content {
+    transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+    max-height: 0;
+    overflow: hidden;
+}
+.timeline-item-content.open {
+    max-height: 1000px; /* Large enough to fit content */
+}
+.skill-tooltip {
+    position: absolute;
+    background-color: #333;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    z-index: 1000;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s, visibility 0.2s;
+    pointer-events: none; /* Allows mouse events to pass through */
+    transform: translateY(10px); /* Initial slight offset */
+}
+.skill-tooltip.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+.company-marker {
+    background-color: #60A5FA; /* Default blue, will be overridden by JS */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
