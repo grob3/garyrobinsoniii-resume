@@ -1,0 +1,65 @@
+/* Dark Mode Theme */
+body.dark-mode {
+    background-color: #1a202c;
+    color: #cbd5e0;
+}
+
+.dark-mode #header {
+    background-color: rgba(26, 32, 44, 0.8);
+    border-bottom: 1px solid #2d3748;
+}
+
+.dark-mode a:not(button a) {
+    color: #63b3ed;
+}
+
+.dark-mode a:hover:not(button a) {
+    color: #90cdf4;
+}
+
+.dark-mode h1, .dark-mode h2, .dark-mode h3 {
+    color: #e2e8f0;
+}
+
+.dark-mode .bg-white,
+.dark-mode .bg-gray-50 {
+    background-color: #2d3748;
+    border: 1px solid #4a5568;
+}
+
+.dark-mode .text-gray-800, .dark-mode .text-gray-700, .dark-mode .text-gray-600, .dark-mode .text-gray-500 {
+    color: #a0aec0;
+}
+
+.dark-mode .text-blue-600 {
+    color: #63b3ed;
+}
+
+.dark-mode .shadow-sm,
+.dark-mode .shadow-md,
+.dark-mode .shadow-xl {
+    box-shadow: none;
+}
+
+.dark-mode .company-marker {
+    border: 2px solid #4a5568;
+}
+
+.dark-mode footer {
+    color: #a0aec0;
+}
+
+.dark-mode #light-theme-btn {
+    background-color: transparent;
+    color: #a0aec0;
+}
+
+.dark-mode #dark-theme-btn {
+    background-color: #4a5568;
+    color: #e2e8f0;
+}
+
+.dark-mode #fun-theme-btn {
+    background-color: transparent;
+    color: #a0aec0;
+}
