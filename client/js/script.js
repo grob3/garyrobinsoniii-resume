@@ -432,55 +432,5 @@ document.addEventListener('DOMContentLoaded', function () {
         certsContainer.innerHTML += certHTML;
     });
 
-    // Contact Form Submission (now uses fetch to a backend server)
-    const contactForm = document.getElementById('contact-form');
-    const formMessage = document.getElementById('form-message');
-    contactForm.addEventListener('submit', async function(event) {
-        event.preventDefault(); // Prevent default form submission
-
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
-
-        // Basic client-side validation
-        if (!name || !email || !message) {
-            formMessage.classList.remove('hidden', 'text-green-600');
-            formMessage.classList.add('text-red-600');
-            formMessage.textContent = 'Please fill in all required fields.';
-            return;
-        }
-
-        formMessage.classList.remove('hidden', 'text-red-600', 'text-green-600');
-        formMessage.textContent = 'Sending message...'; // Show a loading message
-
-        try {
-            // NOTE: Replace '/api/send-email' with the actual URL of your deployed backend endpoint.
-            // For local testing, it might be 'http://localhost:3000/send-email' if your server runs on port 3000.
-            const response = await fetch('http://localhost:3000/send-email', { // Placeholder, update for deployment
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ name, email, message }),
-            });
-
-            const result = await response.json(); // Assuming your backend sends JSON response
-
-            if (response.ok) {
-                formMessage.classList.remove('text-red-600');
-                formMessage.classList.add('text-green-600');
-                formMessage.textContent = result.message || 'Message sent successfully!';
-                contactForm.reset(); // Clear form on success
-            } else {
-                formMessage.classList.remove('text-green-600');
-                formMessage.classList.add('text-red-600');
-                formMessage.textContent = result.error || 'Failed to send message. Please try again.';
-            }
-        } catch (error) {
-            console.error('Network error or server unreachable:', error);
-            formMessage.classList.remove('text-green-600');
-            formMessage.classList.add('text-red-600');
-            formMessage.textContent = 'An error occurred. Please try again later or contact me directly via my LinkedIn profile.';
-        }
-    });
+    
 });
