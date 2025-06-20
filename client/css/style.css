@@ -4,12 +4,15 @@ body {
     color: #4A4A4A;
 }
 .timeline-item-content {
-    transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
     max-height: 0;
     overflow: hidden;
+    transition: max-height 0.4s ease-out, padding-top 0.4s ease-out;
+    padding-top: 0;
 }
+
 .timeline-item-content.open {
-    max-height: 1000px; /* Large enough to fit content */
+    max-height: 1000px; /* Adjust to fit content */
+    padding-top: 1rem; /* This creates the space that was previously margin-top */
 }
 .skill-tooltip {
     position: absolute;
@@ -44,3 +47,5 @@ body {
     border-radius: 50%;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+

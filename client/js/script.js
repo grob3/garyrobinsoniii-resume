@@ -400,11 +400,6 @@ document.addEventListener('DOMContentLoaded', function () {
         header.addEventListener('click', () => {
             const content = header.querySelector('.timeline-item-content');
             content.classList.toggle('open');
-             if (content.classList.contains('open')) {
-                content.style.padding = '1rem 0 0 0';
-            } else {
-                content.style.padding = '0';
-            }
         });
     });
 

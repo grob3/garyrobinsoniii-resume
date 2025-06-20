@@ -3,7 +3,8 @@
 // Import necessary modules
 const express = require('express');
 const nodemailer = require('nodemailer');
-const cors = require('cors'); // Required for cross-origin requests
+const cors = require('cors');
+const path = require('path'); // Required for cross-origin requests
 require('dotenv').config(); // Load environment variables from .env file
 
 // Initialize the Express app
@@ -15,6 +16,9 @@ const port = process.env.PORT || 3000; // Use port from environment variable or 
 app.use(cors()); 
 // Parse JSON bodies from incoming requests
 app.use(express.json());
+
+// Serve static files from the 'client' directory
+app.use(express.static(path.join(__dirname, '../client')));
 
 // Configure Nodemailer transporter
 // This transporter will be used to send emails.

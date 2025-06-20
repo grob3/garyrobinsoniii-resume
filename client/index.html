@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Link to your custom stylesheet -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
     <!-- Chosen Palette: Warm Neutrals, accented with various shades of blues, greens, and grays for distinction. -->
     <!-- Application Structure Plan: The SPA is designed as a top-to-bottom narrative journey through the candidate's career. It starts with a high-level summary, moves to an interactive skills dashboard, followed by a 'Recent Projects' section showcasing practical application of skills, then presents a detailed, interactive career timeline, and concludes with education/certifications and a contact form. This structure allows a recruiter to get a quick overview and then explore areas of interest, moving from abstract skills to concrete project examples, then to professional experience. -->
     <!-- Visualization & Content Choices: 1. Skills -> Goal: Inform/Organize & Show Relationships -> Viz: Categorized Tagged Lists with Hover Popover -> Interaction: Visual grouping via tags, hover to see associated companies for each skill. Justification: Categorized lists are ATS-friendly, and the hover popover directly links skills to experience. 2. Recent Projects -> Goal: Showcase Applied Skills & Work -> Viz: Grid of interactive tiles with image placeholders, description, and skill tags -> Interaction: Clickable links to GitHub. Justification: Provides concrete examples of work and applied skills in a visually appealing and easily digestible format. 3. Experience -> Goal: Show Change & Detail -> Viz: Vertical Timeline (HTML/CSS) with company initials/color coding -> Interaction: Click to expand/collapse job details, including specific skills used. Justification: An intuitive way to show career progression with enhanced detail. 4. Education/Certs -> Goal: Inform -> Viz: Styled Cards -> Interaction: None. Justification: Straightforward data presented clearly. 5. Contact Form -> Goal: Enable communication -> Viz: Standard form fields with a submit button -> Interaction: Client-side message on submission which sends a POST request to a backend server. Justification: Provides a direct and accessible way for interested parties to reach out, with improved security and reliability via a backend. -->
@@ -22,15 +23,19 @@
         <div class="container mx-auto px-6 py-3">
             <div class="flex justify-between items-center">
                 <div class="text-xl font-bold">
-                    <a href="#hero" class="text-blue-600 hover:text-blue-700 transition">GR///</a>
+                    <a href="#hero" class="text-blue-600 hover:text-blue-700 transition"><img src="assets/logo.png" alt="Gary's Logo" style="height: 60px;"></a>
                 </div>
-                <nav class="hidden md:flex space-x-6">
+                <nav class="hidden md:flex items-center space-x-6">
                     <a href="#summary" class="text-gray-600 hover:text-blue-600 transition">Summary</a>
                     <a href="#skills" class="text-gray-600 hover:text-blue-600 transition">Skills</a>
                     <a href="#projects" class="text-gray-600 hover:text-blue-600 transition">Projects</a>
                     <a href="#experience" class="text-gray-600 hover:text-blue-600 transition">Experience</a>
                     <a href="#education" class="text-gray-600 hover:text-blue-600 transition">Education</a>
                     <a href="#contact" class="text-gray-600 hover:text-blue-600 transition">Contact</a>
+                    <button id="theme-toggle-btn" class="ml-4 p-2 rounded-full text-gray-600 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
+                        <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+                        <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
+                    </button>
                 </nav>
                 <button id="mobile-menu-button" class="md:hidden p-2 rounded-md">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
@@ -56,7 +61,7 @@
             <p class="text-xl md:text-2xl text-blue-600 font-semibold mt-4">GenAI Certified QA Engineering Leader</p>
             <p class="text-gray-500 mt-2">Active Clearance</p>
             <div class="mt-6 flex justify-center items-center space-x-4 text-sm text-gray-600">
-                <span>Vienna, VA</span>
+                <span>Washington, DC Metro Area</span>
                 <span>&bull;</span>
                 <a href="mailto:grobinson3@gmail.com" class="hover:text-blue-600">grobinson3@gmail.com</a>
                 <span>&bull;</span>
@@ -160,11 +165,12 @@
     </main>
 
     <footer class="text-center py-8 mt-12 text-gray-500 text-sm">
-        <p>Interactive resume created for Gary Robinson, III.</p>
+        <p>created by Gary Robinson, III.</p>
         <p>&copy; 2025</p>
     </footer>
 
     <!-- Link to your JavaScript file -->
-    <script src="js/script.js"></script>
+        <script src="js/script.js"></script>
+    <script src="js/theme.js"></script>
 </body>
 </html>
