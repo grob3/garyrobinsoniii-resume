@@ -48,4 +48,27 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Responsive adjustments for timeline on mobile */
+@media (max-width: 767px) {
+    /* Reposition the main timeline vertical bar to the left */
+    #timeline-container > .absolute {
+        left: 1rem !important; /* 16px from the left */
+        transform: translateX(0) !important; /* Reset horizontal centering */
+    }
+
+    /* Reposition each company marker to align with the new line */
+    .timeline-item .company-marker {
+        left: 1rem !important; /* Match the line's position */
+        /* The existing transform: translateX(-50%) will now center it on the 1rem line */
+    }
+
+    /* Adjust the content container to give it space and align text */
+    .timeline-item > div:last-child {
+        width: 100%;
+        padding-left: 3rem; /* Space for line and marker */
+        padding-right: 1rem; /* Some breathing room on the right */
+        text-align: left !important; /* Force all text to be left-aligned on mobile */
+    }
+}
+
 
