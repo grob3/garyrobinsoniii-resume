@@ -200,11 +200,11 @@ document.addEventListener('DOMContentLoaded', function () {
             skillsUsed: ["GitHub Actions", "Jenkins", "Docker", "Security", "Test Automation", "SDLC"]
         },
         {
-            title: "Mobile App Performance Monitor",
-            description: "Built a monitoring solution for mobile applications to track performance metrics and identify regressions in real-time.",
-            githubPageLink: "https://github.com/your-username/mobile-monitor", // Placeholder
+            title: "Formula 1 RAG chatbot",
+            description: "Built a chatbot using ElasticSearch and LLMs to provide information about Formula 1 teams and drivers.",
+            githubPageLink: "https://github.com/grob3/elasticRagF1", 
             imagePlaceholder: "https://placehold.co/400x250/F97316/FFFFFF?text=Mobile+Perf",
-            skillsUsed: ["Mobile Applications", "Android", "Datadog", "Monitoring & Analytics", "JavaScript"]
+            skillsUsed: ["Web Applications", "ElasticSearch", "Python", "Jupyer"]
         },
          {
             title: "Automated API Testing Framework",
