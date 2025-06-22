@@ -74,6 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const experienceData = [
         {
             company: "Steampunk",
+            logo: "assets/img/steampunk.png",
             title: "QA Engineering Team Lead - USDA / FEMA National Flood Insurance Program",
             date: "Jul. 2023 – Present",
             achievements: [
@@ -87,6 +88,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         {
             company: "Sentral",
+            logo: "assets/img/sentral.png",
             title: "QA Lead - Senrtal.com, and Reservation Lookup",
             date: "Apr. 2022 – Mar. 2023",
             achievements: [
@@ -97,6 +99,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         {
             company: "Clearcover",
+            logo: "assets/img/clearcover.png",
             title: "QA Lead Clearcover Car Insurance",
             date: "Aug. 2021 – Apr. 2022",
             achievements: [
@@ -107,6 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
          {
             company: "Flyreel",
+            logo: "assets/img/flyreel.png",
             title: "QA Architect / Scrum Master - Flyreel AI",
             date: "Jan. 2021 – Aug. 2021",
             achievements: [
@@ -117,6 +121,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         {
             company: "Rally Health",
+            logo: "assets/img/rally-health.png",
             title: "QA Lead/Software Engineer / Security Advocate",
             date: "Feb. 2015 – Jan. 2021",
             achievements: [
@@ -127,6 +132,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
          {
             company: "Amazon",
+            logo: "assets/img/amazon.png",
             title: "Quality Assurance Engineer II / QA Lead",
             date: "Mar. 2014 – Feb. 2015",
             achievements: [
@@ -137,6 +143,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         {
             company: "Taxi Magic (Curb)",
+            logo: "assets/img/curb.png",
             title: "Senior Quality Assurance Engineer / QA Lead - Taxi Driver App",
             date: "Aug. 2013 – Mar. 2014",
             achievements: [
@@ -146,6 +153,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         {
             company: "RSA, The Security Division of EMC",
+            logo: "assets/img/rsa.png",
             title: "Principal SW Quality Engineer / Functional QA Lead - RSA, Security Analytics",
             date: "Apr. 2013 – Aug. 2013",
             achievements: [
@@ -155,6 +163,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         {
             company: "Reality Mobile LLC",
+            logo: "assets/img/reality-mobile.png",
             title: "SQA Engineer / QA Lead - Reality Vision Analytics",
             date: "Dec. 2011 – Apr. 2013",
             achievements: [
@@ -165,6 +174,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         {
             company: "Symantec",
+            logo: "assets/img/symantec.png",
             title: "SQA Engineer / QA Lead - Managed Security Services",
             date: "Nov. 2010 – Dec. 2011",
             achievements: [
@@ -174,6 +184,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         {
             company: "Accenture",
+            logo: "assets/img/accenture.png",
             title: "Software Engineer - Test Analyst / PL/SQL Developer",
             date: "Apr. 2007 – Nov. 2010",
             achievements: [
@@ -343,36 +354,14 @@ document.addEventListener('DOMContentLoaded', function () {
         skillsGrid.appendChild(categoryDiv);
     }
 
-    // Company color generator for timeline markers
-    const companyColorPalette = [
-        '#EF4444', '#F97316', '#EAB308', '#22C55E', '#10B981',
-        '#06B6D4', '#3B82F6', '#6366F1', '#8B5CF6', '#D946EF',
-        '#F43F5E', '#EC4899'
-    ];
-    const companyColorMap = {};
-    let colorIndex = 0;
-    const getCompanyColor = (companyName) => {
-        if (!companyColorMap[companyName]) {
-            companyColorMap[companyName] = companyColorPalette[colorIndex % companyColorPalette.length];
-            colorIndex++;
-        }
-        return companyColorMap[companyName];
-        
-    };
-
-
     // Timeline Population
     const timelineContainer = document.getElementById('timeline-container');
     experienceData.forEach((job, index) => {
-        const sideClass = index % 2 === 0 ? 'md:left-1/2 md:pr-8' : 'md:left-0 md:pl-8';
-        const companyInitial = job.company.charAt(0).toUpperCase();
-        const companyBgColor = getCompanyColor(job.company);
-
         const itemHTML = `
             <div class="mb-8 flex md:justify-between items-center w-full ${index % 2 === 0 ? 'flex-row-reverse' : ''}">
                 <div class="order-1 md:w-5/12"></div>
-                <div class="z-20 flex items-center order-1 company-marker" style="background-color: ${companyBgColor};">
-                    <span class="mx-auto font-semibold text-lg text-white">${companyInitial}</span>
+                <div class="z-20 flex items-center order-1 company-marker">
+                    <img src="${job.logo}" alt="${job.company} Logo">
                 </div>
                 <div class="order-1 bg-white rounded-lg shadow-xl w-full md:w-5/12 px-6 py-4 cursor-pointer timeline-item-header">
                     <h3 class="font-bold text-gray-800 text-lg">${job.company}</h3>
