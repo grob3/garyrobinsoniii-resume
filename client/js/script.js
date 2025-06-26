@@ -421,5 +421,16 @@ document.addEventListener('DOMContentLoaded', function () {
         certsContainer.innerHTML += certHTML;
     });
 
+    // Scroll Progress Bar
+    window.addEventListener('scroll', () => {
+        const progressBar = document.getElementById('progressBar');
+        if (progressBar) {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            progressBar.style.width = scrolled + '%';
+        }
+    });
+
     
 });
