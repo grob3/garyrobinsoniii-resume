@@ -1,4 +1,4 @@
-# Interactive Resume - Gary Robinson, III
+# Interactive Resume - Gary Robinson, III - garyrobinsoniii.com
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Deployed-brightgreen)](https://your-github-pages-url)
 [![Node.js](https://img.shields.io/badge/Node.js-Backend-blue)](https://nodejs.org)
@@ -141,13 +141,6 @@ Your frontend will be automatically deployed to `https://your-username.github.io
 ### Backend (e.g., Render, Heroku, Vercel Functions)
 
 The server/ directory needs to be deployed to a platform that supports Node.js applications or serverless functions.
-
-#### Platform Options
-
-- **Render.com**: Recommended for simple Node.js apps. Easy to set up with GitHub integration
-- **Heroku**: Good for small Node.js apps with similar setup to Render
-- **Vercel/Netlify Functions**: Excellent choices if you convert server.js to serverless function format
-- **DigitalOcean/AWS EC2**: More control but requires more setup and maintenance
 
 #### Environment Variables
 
