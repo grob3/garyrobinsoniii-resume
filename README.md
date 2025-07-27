@@ -1,6 +1,6 @@
-# Interactive Resume - Gary Robinson, III - garyrobinsoniii.com
+# Interactive Resume - Gary Robinson, III - `garyrobinsoniii.com`
 
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Deployed-brightgreen)](https://your-github-pages-url)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Deployed-brightgreen)](https://garyrobinsoniii.com)
 [![Node.js](https://img.shields.io/badge/Node.js-Backend-blue)](https://nodejs.org)
 
 An interactive single-page application (SPA) serving as an online resume for Gary Robinson, III. This project showcases:
@@ -136,7 +136,7 @@ jobs:
    - Ensure the directory selected is / (root) for the gh-pages branch
    - Save your changes
 
-Your frontend will be automatically deployed to `https://your-username.github.io/your-repo-name/` whenever you push changes to your main branch.
+Your frontend will be automatically deployed to `https://grob3.github.io/garyrobinsoniii-resume/` and `https://garyrobinsoniii.com/` whenever you push changes to your main branch.
 
 ### Backend (e.g., Render, Heroku, Vercel Functions)
 
@@ -160,7 +160,7 @@ Once your backend is deployed, update the fetch URL in client/js/script.js:
 const response = await fetch('http://localhost:3000/send-email', {
 
 // Update to your deployed backend URL
-const response = await fetch('https://your-deployed-backend-url.com/send-email', {
+const response = await fetch('https://garyrobinsoniii.com/send-email', {
 ```
 
 Contributing
